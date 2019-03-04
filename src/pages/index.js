@@ -1,21 +1,67 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Component } from "react";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const actionOptions = ["coding","designing","planning","writing","programming","programming","programming","programming","programming","concluding","programming","thinking","optimizing","optimizing","optimizing","optimizing","optimizing","optimizing","refactoring","refactoring","refactoring","objectifying","simplifying","decoupling","debugging","debugging","debugging","debugging","debugging","debugging","configuring","streamlining","searching","tweaking","editing", "learning", "building"];
 
-export default IndexPage
+const junk = ["#","@","%","*","&amp;","&lt;","&gt;","_","=","+","[","]","|","-","!","?"];
+
+const randomInt = (min, max) => {
+	return Math.round(min + (Math.random() * (max-min)));
+}
+
+const instagram = "radial-gradient(circle at 25% 110%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%),radial-gradient(circle at 25% 110%,#b9a800 0,#938500 5%,#b10f00 45%,#8c0061 60%,#002ca9 90%)";
+
+
+class IndexPage extends Component {
+  constructor(props) {
+		super(props);
+
+		this.state = {
+			action: "",
+			timeoutId: false
+		}
+  }
+  
+  componentDidMount() {
+		this.tick();
+	}
+
+	componentWillUnmount() {
+    clearTimeout(this.state.timeoutId);
+  }
+    
+    render() {
+      return (
+        <Layout>
+          <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+            <p className="action-animation">{this.state.action}</p>
+            <div className="follow">
+              <a target="_blank" rel="noopener noreferrer" style={{background: "#4875B4"}} href="https://www.linkedin.com/in/stephenunder/"><i className="fab fa-linkedin-in"></i></a>
+              <a target="_blank" rel="noopener noreferrer" style={{background: "#4e545a"}} href="https://github.com/stephenunder"><i className="fab fa-github"></i></a>
+              <a target="_blank" rel="noopener noreferrer" style={{background: `${instagram}`, fontSize: '30px'}} href="https://www.instagram.com/stephenunder/"><i className="fab fa-instagram"></i></a>
+            </div>
+        </Layout>
+      )
+    }
+  
+    tick = () => {
+      let text = actionOptions[randomInt(0, actionOptions.length-1)];
+      const chars = text.split("");
+        const glitch = randomInt(0, 3);
+        
+      for (var i = 0; i < glitch; i++) {
+        chars[randomInt(0, chars.length-1)] = junk[randomInt(0, junk.length-1)];
+      }
+      
+      text = chars.join("");
+  
+      const timeoutId = setTimeout(this.tick, randomInt(16,400));
+  
+      this.setState({ action: text, timeoutId });
+    }
+  
+}
+
+export default IndexPage;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -200,6 +202,8 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
+  height: 100vh;
+  width: 100%;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -208,7 +212,35 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  background: #111;
 }
+body:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#14D20A 50%, #000 50%);
+  background-size: 100% 4px;
+  background-repeat: repeat-y;
+  opacity: .1;
+  box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, .8);
+  border-radius: 20px;
+  z-index: 1;
+  pointer-events: none;
+  animation: scrollDown 1s linear infinite;
+}
+
+@keyframes scrollDown {
+  50% {
+    background-position: 0 10px;
+  }
+  99.9% {
+    background-position: 0 20px;
+  }
+}
+
 img {
   max-width: 100%;
   margin-left: 0;
@@ -619,4 +651,34 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+
+.action-animation {
+  margin-top: 100px;
+  font: 7vmin "Fira Mono", monospaced;
+  color: #2eec96;
+}
+
+.follow {
+    z-index: 1001;
+    position: fixed;
+    display: inline-flex;
+    bottom: 35px;
+    width: 100%;
+    height: auto;
+    top: auto;
+    left: 0;
+    text-align: left;
+    font-size: 25px;
+}
+.follow a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
 }
