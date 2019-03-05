@@ -3,21 +3,17 @@ import React, { Component } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const actionOptions = ["coding","designing","planning","writing","programming","programming","programming","programming","programming","concluding","programming","thinking","optimizing","optimizing","optimizing","optimizing","optimizing","optimizing","refactoring","refactoring","refactoring","objectifying","simplifying","decoupling","debugging","debugging","debugging","debugging","debugging","debugging","configuring","streamlining","searching","tweaking","editing", "learning", "building"];
+const actionOptions = ["coding", "designing", "planning", "writing", "programming", "concluding", "thinking", "optimizing", "refactoring", "simplifying", "debugging", "configuring", "streamlining", "searching", "tweaking", "editing", "learning", "building"];
 
-const junk = ["#","@","%","*","&amp;","&lt;","&gt;","_","=","+","[","]","|","-","!","?"];
+const junk = ["#", "@", "%", "*", "&amp;", "&lt;", "&gt;", "_", "=", "+", "[" ,"]", "|", "-", "!", "?"];
 
 const randomInt = (min, max) => {
 	return Math.round(min + (Math.random() * (max-min)));
 }
 
-const instagram = "radial-gradient(circle at 25% 110%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%),radial-gradient(circle at 25% 110%,#b9a800 0,#938500 5%,#b10f00 45%,#8c0061 60%,#002ca9 90%)";
-
-
 class IndexPage extends Component {
   constructor(props) {
 		super(props);
-
 		this.state = {
 			action: "",
 			timeoutId: false
@@ -40,7 +36,7 @@ class IndexPage extends Component {
             <div className="follow">
               <a target="_blank" rel="noopener noreferrer" style={{background: "#4875B4"}} href="https://www.linkedin.com/in/stephenunder/"><i className="fab fa-linkedin-in"></i></a>
               <a target="_blank" rel="noopener noreferrer" style={{background: "#4e545a"}} href="https://github.com/stephenunder"><i className="fab fa-github"></i></a>
-              <a target="_blank" rel="noopener noreferrer" style={{background: `${instagram}`, fontSize: '30px'}} href="https://www.instagram.com/stephenunder/"><i className="fab fa-instagram"></i></a>
+              <a target="_blank" rel="noopener noreferrer" style={{background: "#1DA1F2", fontSize: '30px'}} href="https://www.twitter.com/stephenunder/"><i className="fab fa-twitter"></i></a>
             </div>
         </Layout>
       )

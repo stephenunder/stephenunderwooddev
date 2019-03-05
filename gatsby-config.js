@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Stephen Underwood is...`,
-    description: `Developer site`,
+    title: `Stephen is...`,
+    description: `Developer starter site`,
     author: `@stephenunder`,
   },
   plugins: [
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Stephen Underwood`,
+        name: `Stephen U`,
         short_name: `stephenunder`,
         start_url: `/`,
         background_color: `#663399`,
