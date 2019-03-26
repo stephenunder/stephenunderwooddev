@@ -9,6 +9,7 @@ import "./layout.css";
 
 import { StaticQuery, graphql } from "gatsby";
 
+import Footer from "./footer";
 import Header from "./header";
 import Helmet from "react-helmet";
 import PropTypes from "prop-types";
@@ -49,6 +50,7 @@ const Layout = ({ children }) => (
         >
           {children}
         </div>
+        <Footer />
       </>
     )}
   />

@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "glamor";
 
 const Header = ({ siteTitle }) => (
-  <div
+  <header
     {...css({
       background: "#2EEC96",
       marginBottom: "1.45rem",
@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => (
         {siteTitle}
       </h1>
     </div>
-  </div>
+  </header>
 )
 
 export default Header;
